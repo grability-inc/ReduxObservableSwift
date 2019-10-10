@@ -26,6 +26,7 @@ class NiccoloPoloEpic: Epic<TestAppState> {
             }
             .do(onNext: { response in
                 print("[Venezia] Niccolo Polo was called by the lastname")
+                store.dispatch(action: TestAction.niccoloAware)
             })
     }
 }
