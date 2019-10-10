@@ -94,9 +94,11 @@ class redux_observableTests: XCTestCase {
             TestAction.niccolo,
             TestAction.marco,
             TestAction.polo,
+            TestAction.niccoloAware,
             TestAction.maffeo,
             TestAction.marco,
-            TestAction.polo
+            TestAction.polo,
+            TestAction.maffeoAware
         ]
         self.appStore?.middlewares = [
             MarcoPoloEpic().toMiddleware(self.appStore!),
