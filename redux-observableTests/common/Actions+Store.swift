@@ -29,6 +29,18 @@ enum TestAction: ReduxAction {
     static let maffeoIdentifier = "TestAction.maffeo"
 }
 
+enum ExplorerAction: ReduxAction {
+    case conquest(territory: Territory)
+
+    var identifier: String {
+        switch self {
+        case .conquest: return ExplorerAction.conquestIdentifier
+        }
+    }
+
+    static let conquestIdentifier = "ExplorerAction.conquest"
+}
+
 class TestAppStore: Store<TestAppState> {
 
     init(reducers: [Reducer<TestAppState>], middlewares: [Middleware<TestAppState>]) {
