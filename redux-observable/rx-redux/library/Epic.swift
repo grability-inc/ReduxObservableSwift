@@ -46,8 +46,4 @@ class Epic<S> {
         return EpicMiddleware(self)
     }
 
-    func switchMap(actionIdentifiers types: [String]) -> Observable<ReduxAction> {
-        return store.getOneTimeObserver(actionIdentifiers: types)
-    }
-
 }
