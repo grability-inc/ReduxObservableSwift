@@ -26,10 +26,6 @@ extension ObservableType where Element == ReduxAction {
         return flatMap { _ in Observable<ReduxAction>.never() }
     }
 
-    func switchMap<ReduxAction>(epic: Epic<Any>, _ actionIdentifiers: String...) -> Observable<ReduxAction> {
-        return epic.switchMap(actionIdentifiers: actionIdentifiers) as! Observable<ReduxAction>
-    }
-
 }
 
 extension ObservableType {
