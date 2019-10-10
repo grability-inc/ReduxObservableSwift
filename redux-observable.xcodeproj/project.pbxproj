@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18A340C2ABC787F2D986715E /* Pods_redux_observable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BF795F54727EF9F4650299 /* Pods_redux_observable.framework */; };
 		3436601921DD3837DDEC9311 /* Pods_redux_observableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174EB3CB4FCBF73FA843237F /* Pods_redux_observableTests.framework */; };
+		5601C1C0234FD55D000A9D69 /* MarcoPoloEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5601C1BF234FD55D000A9D69 /* MarcoPoloEpic.swift */; };
 		56CCCBBE234F750100CC713D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCBBD234F750100CC713D /* AppDelegate.swift */; };
 		56CCCBC0234F750100CC713D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCBBF234F750100CC713D /* ViewController.swift */; };
 		56CCCBC5234F750300CC713D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CCCBC4234F750300CC713D /* Assets.xcassets */; };
@@ -22,12 +23,9 @@
 		56CCCC0C234F759900CC713D /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCC05234F759900CC713D /* Middleware.swift */; };
 		56CCCC15234F8BDA00CC713D /* EventCounterMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCC14234F8BDA00CC713D /* EventCounterMiddleware.swift */; };
 		56CCCC17234F8C7C00CC713D /* Actions+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCC16234F8C7C00CC713D /* Actions+Store.swift */; };
-		56CCCC19234F8DE600CC713D /* MarcoPoloEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCC18234F8DE600CC713D /* MarcoPoloEpic.swift */; };
-		56CCCC1B234F93B300CC713D /* NiccoloPoloEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCC1A234F93B300CC713D /* NiccoloPoloEpic.swift */; };
-		56CCCC1E234FB2B400CC713D /* MaffeoPoloEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCC1D234FB2B400CC713D /* MaffeoPoloEpic.swift */; };
 		56CCCC21234FB58000CC713D /* EventRecorderMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCC20234FB58000CC713D /* EventRecorderMiddleware.swift */; };
 		56CCCC24234FC9E000CC713D /* TestAppState+AppSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCC0E234F790B00CC713D /* TestAppState+AppSection.swift */; };
-		9465BC9F7EA5F03371C058DC /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		9465BC9F7EA5F03371C058DC /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		174EB3CB4FCBF73FA843237F /* Pods_redux_observableTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_redux_observableTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5601C1BF234FD55D000A9D69 /* MarcoPoloEpic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoPoloEpic.swift; sourceTree = "<group>"; };
 		56CCCBBA234F750100CC713D /* redux-observable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "redux-observable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CCCBBD234F750100CC713D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56CCCBBF234F750100CC713D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,9 +59,6 @@
 		56CCCC0E234F790B00CC713D /* TestAppState+AppSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestAppState+AppSection.swift"; sourceTree = "<group>"; };
 		56CCCC14234F8BDA00CC713D /* EventCounterMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCounterMiddleware.swift; sourceTree = "<group>"; };
 		56CCCC16234F8C7C00CC713D /* Actions+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Actions+Store.swift"; sourceTree = "<group>"; };
-		56CCCC18234F8DE600CC713D /* MarcoPoloEpic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcoPoloEpic.swift; sourceTree = "<group>"; };
-		56CCCC1A234F93B300CC713D /* NiccoloPoloEpic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiccoloPoloEpic.swift; sourceTree = "<group>"; };
-		56CCCC1D234FB2B400CC713D /* MaffeoPoloEpic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaffeoPoloEpic.swift; sourceTree = "<group>"; };
 		56CCCC20234FB58000CC713D /* EventRecorderMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRecorderMiddleware.swift; sourceTree = "<group>"; };
 		69DBFB0E502A8E8FC113D3FD /* Pods-redux-observable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-redux-observable.release.xcconfig"; path = "Target Support Files/Pods-redux-observable/Pods-redux-observable.release.xcconfig"; sourceTree = "<group>"; };
 		6E7C35E26963ABAF1AEDE6EF /* Pods-redux-observableTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-redux-observableTests.release.xcconfig"; path = "Target Support Files/Pods-redux-observableTests/Pods-redux-observableTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,7 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A340C2ABC787F2D986715E /* Pods_redux_observable.framework in Frameworks */,
-				9465BC9F7EA5F03371C058DC /* BuildFile in Frameworks */,
+				9465BC9F7EA5F03371C058DC /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,9 +166,7 @@
 		56CCCC1C234F93C300CC713D /* epics */ = {
 			isa = PBXGroup;
 			children = (
-				56CCCC18234F8DE600CC713D /* MarcoPoloEpic.swift */,
-				56CCCC1A234F93B300CC713D /* NiccoloPoloEpic.swift */,
-				56CCCC1D234FB2B400CC713D /* MaffeoPoloEpic.swift */,
+				5601C1BF234FD55D000A9D69 /* MarcoPoloEpic.swift */,
 			);
 			path = epics;
 			sourceTree = "<group>";
@@ -406,14 +400,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56CCCC1E234FB2B400CC713D /* MaffeoPoloEpic.swift in Sources */,
 				56CCCC24234FC9E000CC713D /* TestAppState+AppSection.swift in Sources */,
-				56CCCC1B234F93B300CC713D /* NiccoloPoloEpic.swift in Sources */,
 				56CCCC17234F8C7C00CC713D /* Actions+Store.swift in Sources */,
 				56CCCBD3234F750300CC713D /* redux_observableTests.swift in Sources */,
 				56CCCC15234F8BDA00CC713D /* EventCounterMiddleware.swift in Sources */,
 				56CCCC21234FB58000CC713D /* EventRecorderMiddleware.swift in Sources */,
-				56CCCC19234F8DE600CC713D /* MarcoPoloEpic.swift in Sources */,
+				5601C1C0234FD55D000A9D69 /* MarcoPoloEpic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
