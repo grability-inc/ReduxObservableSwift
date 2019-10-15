@@ -8,7 +8,7 @@
 
 import RxSwift
 
-class Epic<S> {
+class Epic<S: Equatable> {
 
     private let actionRelay = PublishSubject<ReduxAction>()
     private var store : Store<S>!

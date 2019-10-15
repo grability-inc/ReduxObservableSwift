@@ -6,7 +6,7 @@
 //  Copyright © 2019 Grability. All rights reserved.
 //
 
-class Middleware<S> {
+class Middleware<S: Equatable> {
 
     func dispatch(store: Store<S>, action: ReduxAction) {
     }

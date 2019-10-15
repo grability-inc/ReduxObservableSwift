@@ -8,7 +8,7 @@
 
 import RxSwift
 
-class Store<S> {
+class Store<S: Equatable> {
 
     let disposeBag = DisposeBag()
     let SerialQueue = DispatchQueue(label: "ReduxStore")

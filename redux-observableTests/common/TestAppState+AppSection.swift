@@ -15,14 +15,22 @@ enum Territory : String {
     case Hormuz
 }
 
-class TestAppState {
+class TestAppState : Equatable {
 
     var conquestInfo : ConquestInfo = ConquestInfo()
 
+    static func == (lhs: TestAppState, rhs: TestAppState) -> Bool {
+        return lhs.conquestInfo == rhs.conquestInfo
+    }
+
 }
 
-class ConquestInfo {
+class ConquestInfo : Equatable {
 
     var currentTerritory = Territory.Venice
+
+    static func == (lhs: ConquestInfo, rhs: ConquestInfo) -> Bool {
+        return lhs.currentTerritory == rhs.currentTerritory
+    }
 
 }
