@@ -17,6 +17,12 @@ enum Territory : String {
 
 class TestAppState {
 
+    var conquestInfo : ConquestInfo = ConquestInfo()
+
+}
+
+class ConquestInfo {
+
     var currentTerritory = Territory.Venice
 
 }

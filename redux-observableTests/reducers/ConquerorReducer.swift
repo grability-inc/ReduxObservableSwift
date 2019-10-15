@@ -11,7 +11,7 @@
 class ConquerorReducer: Reducer<TestAppState> {
     override func reduce(state: TestAppState, action: ReduxAction) -> TestAppState {
         if case let ExplorerAction.conquest(territory: territory) = action {
-            state.currentTerritory = territory
+            state.conquestInfo.currentTerritory = territory
         }
         return state
     }
