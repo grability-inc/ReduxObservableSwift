@@ -11,10 +11,10 @@ import RxSwift
 @testable import redux_observable
 
 class ReducerAndSelectorsTest: XCTestCase {
-    
+
     var appStore : TestAppStore? = nil
     var dispatchGroup = DispatchGroup()
-    
+
     override func setUp() {
         self.dispatchGroup = DispatchGroup()
         self.appStore = TestAppStore(
@@ -22,10 +22,10 @@ class ReducerAndSelectorsTest: XCTestCase {
             middlewares: []
         )
     }
-    
+
     override func tearDown() {
     }
-    
+
     func testReducer() {
         
         //Given
