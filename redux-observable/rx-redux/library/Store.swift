@@ -14,13 +14,14 @@ class Store<S: Equatable> {
     let SerialQueue = DispatchQueue(label: "ReduxStore")
 
     var currentState: S
-    let reactiveState = PublishSubject<S>()
+    let reactiveState : BehaviorSubject<S>!
     let actions = PublishSubject<ReduxAction>()
     var reducers = [Reducer<S>]()
     var middlewares = [Middleware<S>]()
 
     init(initialState: S) {
         self.currentState = initialState
+        self.reactiveState = BehaviorSubject<S>(value: currentState)
         _ = actions.map { a in
             self.currentState = self.reducers.reduce(self.currentState) { $1.reduce(state: $0, action: a) }
             self.reactiveState.onNext(self.currentState)
@@ -45,7 +46,6 @@ class Store<S: Equatable> {
     public func state<Type>(_ keyPath: KeyPath<S, Type>) -> Observable<Type> {
         return mapProperty(keyPath)
             .distinctUntilChanged { "\($0)" == "\($1)" }
-            .observeOn(MainScheduler.instance)
     }
 
     fileprivate func mapProperty<Type>(_ keyPath: KeyPath<S, Type>) -> Observable<Type> {
@@ -54,7 +54,6 @@ class Store<S: Equatable> {
             .map { (state: S) -> Type in
                 return state[keyPath: keyPath]
             }
-            .observeOn(MainScheduler.instance)
     }
 
 }

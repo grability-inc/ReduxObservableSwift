@@ -70,11 +70,13 @@ class ReducerAndSelectorsTest: XCTestCase {
             self.appStore?.dispatch(action: TestAction.marco)
         }
         appStore?.state(\.conquestInfo.currentTerritory)
+            .skip(1)
             .subscribe(onNext: { [weak self] info in
                 territories.append(info)
             })
             .disposed(by: appStore!.disposeBag)
         appStore?.state(\.conquestInfo.currentTerritory)
+            .skip(1)
             .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe { action in
                 self.dispatchGroup.leave()
