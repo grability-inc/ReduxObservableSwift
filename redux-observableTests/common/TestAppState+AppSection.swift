@@ -15,7 +15,7 @@ enum Territory : String {
     case Hormuz
 }
 
-class TestAppState : Equatable {
+struct TestAppState : Equatable {
 
     var conquestInfo : ConquestInfo = ConquestInfo()
 
@@ -25,7 +25,7 @@ class TestAppState : Equatable {
 
 }
 
-class ConquestInfo : Equatable {
+struct ConquestInfo : Equatable {
 
     var currentTerritory = Territory.Venice
 
