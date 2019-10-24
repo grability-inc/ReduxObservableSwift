@@ -8,6 +8,10 @@
 
 import RxSwift
 
+class NotValueTypeError: Error {
+    var localizedDescription: String = "The mapped property is not a value type"
+}
+
 class Store<S: Equatable> {
 
     let disposeBag = DisposeBag()
@@ -41,6 +45,18 @@ class Store<S: Equatable> {
             $0.dispatch(store: self, action: action)
         }
         actions.onNext(action)
+    }
+
+    public func state<Type: Equatable>(_ keyPath: KeyPath<S, Type>) -> Observable<Type> {
+        return mapProperty(keyPath)
+            .flatMap { t -> Observable<Type> in
+                if Mirror(reflecting: t).displayStyle == .class {
+                    return Observable.error(NotValueTypeError())
+                } else {
+                    return Observable.just(t)
+                }
+            }
+            .distinctUntilChanged { $0 == $1 }
     }
 
     public func state<Type>(_ keyPath: KeyPath<S, Type>) -> Observable<Type> {
