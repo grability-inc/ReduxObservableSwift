@@ -71,8 +71,8 @@ class ReducerAndSelectorsTest: XCTestCase {
         }
         appStore?.state(\.conquestInfo.currentTerritory)
             .skip(1)
-            .subscribe(onNext: { [weak self] info in
-                territories.append(info)
+            .subscribe(onNext: { [weak self] territory in
+                territories.append(territory)
             })
             .disposed(by: appStore!.disposeBag)
         appStore?.state(\.conquestInfo.currentTerritory)
@@ -80,6 +80,50 @@ class ReducerAndSelectorsTest: XCTestCase {
             .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe { action in
                 self.dispatchGroup.leave()
+        }
+        
+        //Then
+        let expec = expectation(description: "Wait for redux dispatchs events")
+        dispatchGroup.notify(queue: .global()) {
+            let expected    = expectedTerritories.reduce("") { $0 + "/\($1)" }
+            let received    = territories.reduce("") { $0 + "/\($1)" }
+            XCTAssertEqual(received, expected)
+            expec.fulfill()
+        }
+        
+        wait(for: [expec], timeout: 3)
+    }
+
+    func testSelectorPointingObject() {
+        
+        //Given
+        self.appStore?.reducers = [
+            ConquerorReducer()
+        ]
+        let expectedTerritories : [Territory] = [
+            Territory.Yangzhou,
+            Territory.Hormuz
+        ]
+        var territories : [Territory] = []
+        
+        //When
+        dispatchGroup.enter()
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+            self.appStore?.dispatch(action: ExplorerAction.conquest(territory: Territory.Yangzhou))
+            self.appStore?.dispatch(action: ExplorerAction.conquest(territory: Territory.Yangzhou))
+            self.appStore?.dispatch(action: ExplorerAction.conquest(territory: Territory.Hormuz))
+            self.appStore?.dispatch(action: TestAction.marco)
+        }
+        appStore?.state(\.conquestInfo)
+            .skip(1)
+            .subscribe(onNext: { info in
+                territories.append(info.currentTerritory)
+            }, onError: { _ in
+                XCTAssert(false, "Observable ended in error")
+            }, onCompleted: {}, onDisposed: {})
+            .disposed(by: appStore!.disposeBag)
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+            self.dispatchGroup.leave()
         }
         
         //Then
