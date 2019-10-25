@@ -1,5 +1,5 @@
 //
-//  AppSection.swift
+//  TestAppState.swift
 //  ios-saas
 //
 //  Created by Camilo Ortegon on 10/9/19.
@@ -8,11 +8,29 @@
 
 import Foundation
 
-enum AppSection: String {
-    case section1
-    case section2
-    case section3
+enum Territory : String {
+    case Venice
+    case Karakorum
+    case Yangzhou
+    case Hormuz
 }
 
-class TestAppState {
+class TestAppState : Equatable {
+
+    var conquestInfo : ConquestInfo = ConquestInfo()
+
+    static func == (lhs: TestAppState, rhs: TestAppState) -> Bool {
+        return lhs.conquestInfo == rhs.conquestInfo
+    }
+
+}
+
+class ConquestInfo : Equatable {
+
+    var currentTerritory = Territory.Venice
+
+    static func == (lhs: ConquestInfo, rhs: ConquestInfo) -> Bool {
+        return lhs.currentTerritory == rhs.currentTerritory
+    }
+
 }
