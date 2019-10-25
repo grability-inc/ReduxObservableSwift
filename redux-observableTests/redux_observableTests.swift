@@ -86,4 +86,49 @@ class redux_observableTests: XCTestCase {
         wait(for: [expec], timeout: 3)
     }
 
+    func testSwitchMap() {
+        
+        //Given
+        let eventRecorder = EventRecorderMiddleware()
+        let expectedEvents : [ReduxAction] = [
+            TestAction.niccolo,
+            TestAction.marco,
+            TestAction.polo,
+            TestAction.niccoloAware,
+            TestAction.maffeo,
+            TestAction.marco,
+            TestAction.polo,
+            TestAction.maffeoAware
+        ]
+        self.appStore?.middlewares = [
+            MarcoPoloEpic().toMiddleware(self.appStore!),
+            NiccoloPoloEpic().toMiddleware(self.appStore!),
+            MaffeoPoloEpic().toMiddleware(self.appStore!),
+            eventRecorder
+        ]
+        
+        //When
+        self.dispatchGroup.enter()
+        DispatchQueue.global().async {
+            self.appStore?.dispatch(action: TestAction.niccolo)
+        }
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+            self.appStore?.dispatch(action: TestAction.maffeo)
+        }
+        
+        //Then
+        let expec = expectation(description: "Wait for redux dispatchs events")
+        dispatchGroup.notify(queue: .global()) {
+            let expected    = expectedEvents.reduce("") { $0 + "/" + $1.identifier }
+            let identifiers = eventRecorder.actions.reduce("") { $0 + "/" + $1.identifier }
+            XCTAssertEqual(identifiers, expected)
+            expec.fulfill()
+        }
+        eventRecorder.debounce(interval: 2000) {
+            self.dispatchGroup.leave()
+        }
+        
+        wait(for: [expec], timeout: 7)
+    }
+
 }

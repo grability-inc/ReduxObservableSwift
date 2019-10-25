@@ -12,6 +12,8 @@
 		5601C1C0234FD55D000A9D69 /* MarcoPoloEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5601C1BF234FD55D000A9D69 /* MarcoPoloEpic.swift */; };
 		5601C1C7234FE633000A9D69 /* ConquerorReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5601C1C6234FE633000A9D69 /* ConquerorReducer.swift */; };
 		5601C1CC234FEF62000A9D69 /* ReducerAndSelectorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5601C1CB234FEF62000A9D69 /* ReducerAndSelectorsTest.swift */; };
+		5601C1C3234FD5E1000A9D69 /* NiccoloPoloEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5601C1C1234FD5E1000A9D69 /* NiccoloPoloEpic.swift */; };
+		5601C1C4234FD5E1000A9D69 /* MaffeoPoloEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5601C1C2234FD5E1000A9D69 /* MaffeoPoloEpic.swift */; };
 		56CCCBBE234F750100CC713D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCBBD234F750100CC713D /* AppDelegate.swift */; };
 		56CCCBC0234F750100CC713D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCCBBF234F750100CC713D /* ViewController.swift */; };
 		56CCCBC5234F750300CC713D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CCCBC4234F750300CC713D /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		5601C1BF234FD55D000A9D69 /* MarcoPoloEpic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoPoloEpic.swift; sourceTree = "<group>"; };
 		5601C1C6234FE633000A9D69 /* ConquerorReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerorReducer.swift; sourceTree = "<group>"; };
 		5601C1CB234FEF62000A9D69 /* ReducerAndSelectorsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerAndSelectorsTest.swift; sourceTree = "<group>"; };
+		5601C1C1234FD5E1000A9D69 /* NiccoloPoloEpic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiccoloPoloEpic.swift; sourceTree = "<group>"; };
+		5601C1C2234FD5E1000A9D69 /* MaffeoPoloEpic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaffeoPoloEpic.swift; sourceTree = "<group>"; };
 		56CCCBBA234F750100CC713D /* redux-observable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "redux-observable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CCCBBD234F750100CC713D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56CCCBBF234F750100CC713D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				5601C1BF234FD55D000A9D69 /* MarcoPoloEpic.swift */,
+				5601C1C2234FD5E1000A9D69 /* MaffeoPoloEpic.swift */,
+				5601C1C1234FD5E1000A9D69 /* NiccoloPoloEpic.swift */,
 			);
 			path = epics;
 			sourceTree = "<group>";
@@ -414,11 +420,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5601C1C4234FD5E1000A9D69 /* MaffeoPoloEpic.swift in Sources */,
 				56CCCC24234FC9E000CC713D /* TestAppState+AppSection.swift in Sources */,
 				5601C1CC234FEF62000A9D69 /* ReducerAndSelectorsTest.swift in Sources */,
 				56CCCC17234F8C7C00CC713D /* Actions+Store.swift in Sources */,
 				56CCCBD3234F750300CC713D /* redux_observableTests.swift in Sources */,
 				5601C1C7234FE633000A9D69 /* ConquerorReducer.swift in Sources */,
+				5601C1C3234FD5E1000A9D69 /* NiccoloPoloEpic.swift in Sources */,
 				56CCCC15234F8BDA00CC713D /* EventCounterMiddleware.swift in Sources */,
 				56CCCC21234FB58000CC713D /* EventRecorderMiddleware.swift in Sources */,
 				5601C1C0234FD55D000A9D69 /* MarcoPoloEpic.swift in Sources */,

@@ -13,6 +13,8 @@ enum TestAction: ReduxAction {
     case polo
     case niccolo
     case maffeo
+    case niccoloAware
+    case maffeoAware
 
     var identifier: String {
         switch self {
@@ -20,6 +22,8 @@ enum TestAction: ReduxAction {
         case .polo: return TestAction.poloIdentifier
         case .niccolo: return TestAction.niccoloIdentifier
         case .maffeo: return TestAction.maffeoIdentifier
+        case .niccoloAware: return TestAction.niccoloAwareIdentifier
+        case .maffeoAware: return TestAction.maffeoAwareIdentifier
         }
     }
 
@@ -27,6 +31,8 @@ enum TestAction: ReduxAction {
     static let poloIdentifier = "TestAction.polo"
     static let niccoloIdentifier = "TestAction.niccolo"
     static let maffeoIdentifier = "TestAction.maffeo"
+    static let niccoloAwareIdentifier = "TestAction.niccoloAware"
+    static let maffeoAwareIdentifier = "TestAction.maffeoAware"
 }
 
 enum ExplorerAction: ReduxAction {
