@@ -6,12 +6,12 @@ def shared_pods
   pod 'RxSwift', '~> 5.0.0'
 end
 
-target 'redux-observable' do
+target 'ReduxObservable' do
   use_frameworks!
   shared_pods
 end
 
-target 'redux-observableTests' do
+target 'ReduxObservableTests' do
   use_frameworks!
   shared_pods
 end
