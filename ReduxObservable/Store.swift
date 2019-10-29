@@ -14,15 +14,15 @@ public class NotValueTypeError: Error {
 
 public class Store<S: Equatable> {
 
-    let disposeBag = DisposeBag()
-    let SerialQueue = DispatchQueue(label: "ReduxStore")
+    public let disposeBag = DisposeBag()
+    public var currentState: S
+    public var reducers = [Reducer<S>]()
+    public var middlewares = [Middleware<S>]()
 
-    var currentState: S
-    let reactiveState : BehaviorSubject<S>!
-    let actions = PublishSubject<ReduxAction>()
-    var reducers = [Reducer<S>]()
-    var middlewares = [Middleware<S>]()
-    var oneTimeObservers = [String: PublishSubject<ReduxAction>]()
+    private let SerialQueue = DispatchQueue(label: "ReduxStore")
+    private let reactiveState : BehaviorSubject<S>!
+    private let actions = PublishSubject<ReduxAction>()
+    private var oneTimeObservers = [String: PublishSubject<ReduxAction>]()
 
     init(initialState: S) {
         self.currentState = initialState
@@ -33,7 +33,7 @@ public class Store<S: Equatable> {
         }.subscribe().disposed(by: disposeBag)
     }
 
-    func dispatch(action: ReduxAction) {
+    public func dispatch(action: ReduxAction) {
         SerialQueue.async {
             objc_sync_enter(self)
             self.dispatchSync(action)
@@ -76,7 +76,7 @@ public class Store<S: Equatable> {
             }
     }
 
-    func getOneTimeObserver(actionIdentifiers types: [String]) -> Observable<ReduxAction> {
+    public func getOneTimeObserver(actionIdentifiers types: [String]) -> Observable<ReduxAction> {
         objc_sync_enter(self)
         let id = UUID().uuidString
         let subject = PublishSubject<ReduxAction>()

@@ -8,7 +8,7 @@
 
 public class Middleware<S: Equatable> {
 
-    func dispatch(store: Store<S>, action: ReduxAction) {
+    public func dispatch(store: Store<S>, action: ReduxAction) {
     }
 
 }
