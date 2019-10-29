@@ -12,7 +12,7 @@ public class NotValueTypeError: Error {
     var localizedDescription: String = "The mapped property is not a value type"
 }
 
-public class Store<S: Equatable> {
+open class Store<S: Equatable> {
 
     public let disposeBag = DisposeBag()
     public var currentState: S
@@ -24,7 +24,7 @@ public class Store<S: Equatable> {
     private let actions = PublishSubject<ReduxAction>()
     private var oneTimeObservers = [String: PublishSubject<ReduxAction>]()
 
-    init(initialState: S) {
+    public init(initialState: S) {
         self.currentState = initialState
         self.reactiveState = BehaviorSubject<S>(value: currentState)
         _ = actions.map { a in

@@ -8,12 +8,12 @@
 
 import RxSwift
 
-public class Epic<S: Equatable> {
+open class Epic<S: Equatable> {
 
     private let actionRelay = PublishSubject<ReduxAction>()
     private var store : Store<S>!
 
-    init() {
+    public init() {
     }
 
     private func subscribeObservable() {
@@ -26,7 +26,7 @@ public class Epic<S: Equatable> {
             .subscribe().disposed(by: store.disposeBag)
     }
 
-    public func getObservable(for observable: Observable<ReduxAction>, store: Store<S>) -> Observable<ReduxAction> {
+    open func getObservable(for observable: Observable<ReduxAction>, store: Store<S>) -> Observable<ReduxAction> {
         return Observable.empty()
     }
 

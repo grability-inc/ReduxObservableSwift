@@ -6,8 +6,13 @@
 //  Copyright © 2019 Grability. All rights reserved.
 //
 
-public class Reducer<S> {
-    public func reduce(state: S, action: ReduxAction) -> S {
+open class Reducer<S> {
+
+    public init() {
+    }
+
+    open func reduce(state: S, action: ReduxAction) -> S {
         return state
     }
+
 }
