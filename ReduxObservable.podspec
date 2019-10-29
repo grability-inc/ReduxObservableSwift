@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
     s.name           = "ReduxObservable"
-    s.version        = "1.0.2"
+    s.version        = "1.0.3"
     s.summary        = "Redux-Observable libarary."
     s.description    = "This is a Swift implementation of Redux-Observable architecture, based on RxSwift library."
     
     s.homepage       = "https://github.com/grability-inc/ReduxObservableSwift"
     s.license        = { :type => "MIT", :file => "LICENSE.md" }
     s.author         = { "cjortegon" => "mountainreacher@gmail.com" }
-    s.source         = { :git => "https://github.com/grability-inc/ReduxObservableSwift.git", :tag => "#{spec.version}" }
+    s.source         = { :git => "https://github.com/grability-inc/ReduxObservableSwift.git", :tag => "#{s.version}" }
 
     # Platform Specifics
     s.platform       = :ios, "8.0"
