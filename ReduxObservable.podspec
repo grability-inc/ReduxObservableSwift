@@ -15,6 +15,9 @@ Pod::Spec.new do |spec|
     # Source Code
     spec.source_files   = "ReduxObservable/*.swift"
 
+    # Dependencies
+    s.dependency 'RxSwift', '~> 5.0.0'
+
     spec.swift_version  = '4.2'
 
 end
