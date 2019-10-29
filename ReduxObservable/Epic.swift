@@ -26,7 +26,7 @@ public class Epic<S: Equatable> {
             .subscribe().disposed(by: store.disposeBag)
     }
 
-    func getObservable(for observable: Observable<ReduxAction>, store: Store<S>) -> Observable<ReduxAction> {
+    public func getObservable(for observable: Observable<ReduxAction>, store: Store<S>) -> Observable<ReduxAction> {
         return Observable.empty()
     }
 
@@ -40,7 +40,7 @@ public class Epic<S: Equatable> {
         }
     }
 
-    func toMiddleware(_ store: Store<S>) -> Middleware<S> {
+    public func toMiddleware(_ store: Store<S>) -> Middleware<S> {
         self.store = store
         subscribeObservable()
         return EpicMiddleware(self)

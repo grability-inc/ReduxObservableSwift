@@ -7,7 +7,7 @@
 //
 
 public class Reducer<S> {
-    func reduce(state: S, action: ReduxAction) -> S {
+    public func reduce(state: S, action: ReduxAction) -> S {
         return state
     }
 }
