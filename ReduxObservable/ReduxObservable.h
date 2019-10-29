@@ -2,8 +2,8 @@
 //  ReduxObservable.h
 //  ReduxObservable
 //
-//  Created by daniel parra on 10/27/19.
-//  Copyright © 2019 grability. All rights reserved.
+//  Created by Camilo Ortegon on 10/29/19.
+//  Copyright © 2019 Grability. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
