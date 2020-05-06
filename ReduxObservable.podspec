@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name           = "ReduxObservable"
-    s.version        = "1.0.6"
+    s.version        = "1.0.8"
     s.summary        = "Redux-Observable libarary."
     s.description    = "This is a Swift implementation of Redux-Observable architecture, based on RxSwift library."
     
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
     s.source_files   = "ReduxObservable/*.swift"
 
     # Dependencies
-    s.dependency 'RxSwift', '~> 5.0.0'
+    s.dependency 'RxSwift', '~> 5.1.0'
 
     s.swift_version  = '4.2'
 
