@@ -3,7 +3,7 @@ platform :ios, '10.0'
 
 def shared_pods
   # https://github.com/ReactiveX/RxSwift
-  pod 'RxSwift', '~> 5.0.0'
+  pod 'RxSwift', '~> 5.1.0'
 end
 
 target 'ReduxObservable' do
