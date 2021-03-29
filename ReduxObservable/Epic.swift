@@ -19,7 +19,7 @@ open class Epic<S: Equatable> {
     private func subscribeObservable() {
         getObservable(
             for: actionRelay
-                .observeOn(ConcurrentDispatchQueueScheduler(qos: .background)),
+                .observe(on: ConcurrentDispatchQueueScheduler(qos: .background)),
             store: self.store
         )
         .asObservable()
